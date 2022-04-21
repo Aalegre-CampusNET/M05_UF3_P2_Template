@@ -50,6 +50,7 @@ namespace M05_UF3_P2_Template
             {
                 endpoints.MapRazorPages();
             });
+            AppDomain.CurrentDomain.SetData("RelativePath", Environment.CurrentDirectory);
         }
     }
 }
