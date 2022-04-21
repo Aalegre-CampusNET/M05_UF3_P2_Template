@@ -33,11 +33,11 @@ namespace M05_UF3_P2_Template.App_Code.Model
             }
             Name = row[1].ToString();
             Icon = row[2].ToString();
-            CIF = row[3].ToString();
-            Address = row[4].ToString();
-            Web = row[5].ToString();
-            Email = row[6].ToString();
-            IconBackground = row[7].ToString();
+            IconBackground = row[3].ToString();
+            CIF = row[4].ToString();
+            Address = row[5].ToString();
+            Web = row[6].ToString();
+            Email = row[8].ToString();
         }
         public Company(int Id) : this(DatabaseManager.Select("Company", null, "Id = " + Id + " ").Rows[0]) { }
 
@@ -47,11 +47,11 @@ namespace M05_UF3_P2_Template.App_Code.Model
             {
                 new DatabaseManager.DB_Field("Name", Name),
                 new DatabaseManager.DB_Field("Icon", Icon),
+                new DatabaseManager.DB_Field("IconBackground", IconBackground),
                 new DatabaseManager.DB_Field("CIF", CIF),
                 new DatabaseManager.DB_Field("Address", Address),
                 new DatabaseManager.DB_Field("Web", Web),
-                new DatabaseManager.DB_Field("Email", Email),
-                new DatabaseManager.DB_Field("IconBackground", IconBackground)
+                new DatabaseManager.DB_Field("Email", Email)
             };
             return DatabaseManager.Update("Company", fields, "Id = " + Id + " ") > 0 ? true : false;
         }
@@ -61,11 +61,11 @@ namespace M05_UF3_P2_Template.App_Code.Model
             {
                 new DatabaseManager.DB_Field("Name", Name),
                 new DatabaseManager.DB_Field("Icon", Icon),
+                new DatabaseManager.DB_Field("IconBackground", IconBackground),
                 new DatabaseManager.DB_Field("CIF", CIF),
                 new DatabaseManager.DB_Field("Address", Address),
                 new DatabaseManager.DB_Field("Web", Web),
-                new DatabaseManager.DB_Field("Email", Email),
-                new DatabaseManager.DB_Field("IconBackground", IconBackground)
+                new DatabaseManager.DB_Field("Email", Email)
             };
             return DatabaseManager.Insert("Company", fields) > 0 ? true : false;
         }
